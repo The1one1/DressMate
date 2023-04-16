@@ -1,0 +1,64 @@
+/* import font from google */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+* {
+  font-family: Open Sans;
+}
+
+div.block-container.css-12oz5g7.egzxvld2 {
+  position: relative;
+  padding-top: 0px;
+}
+
+
+#cloth-recommendation-system{
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    color: rgb(49, 51, 63);
+    padding: 1.25rem 160px 1rem;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+
+/* for pixing image in centre */
+.css-1v0mbdj.etr89bj1 img {
+  width: 200px;
+  border-radius: 50%;
+  margin: 75px;
+  margin-left: 72px;
+  margin-top: 31px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #0101ff !important;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+#MainMenu {
+  visibility: hidden;
+}
+footer {
+  visibility: hidden;
+}
+header {
+  visibility: hidden;
+}
