@@ -7,14 +7,15 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 import requests
+import random
 import cv2
 
 # Load dataset features and asins
 @st.cache_resource()
 def load_data():
-    bottleneck_features_train = np.load("16k_data_ResNet_features2.npy")
-    asins = np.load("16k_data_ResNet_feature_asins2.npy")
-    data = pd.read_pickle("16k_apparel_data.pkl")
+    bottleneck_features_train = np.load("numpy_file/16k_data_ResNet_features2.npy")
+    asins = np.load("numpy_file/16k_data_ResNet_feature_asins2.npy")
+    data = pd.read_pickle("pickels/16k_apparel_data.pkl")
     df_asins = list(data["asin"])
     return bottleneck_features_train, asins, data, df_asins
 
@@ -41,7 +42,7 @@ def extract_features(filename):
     features = model.predict(image.reshape(1, 224, 224, 3))
     return features.flatten()
 
-
+Star_List = ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐', '⭐⭐⭐⭐⭐']
 # Define function to get similar products for a given image file
 def get_similar_products_image(filename, num_results):
     # Extract features from input image
@@ -61,7 +62,7 @@ def get_similar_products_image(filename, num_results):
             data["asin"] == asins[indices[i]]
         ]
         for indx, row in rows.iterrows():
-            left, right = st.columns(2)
+            left, right = st.columns([1, 2])
             with left:
                 image_url = row["medium_image_url"]
                 # Fetch image from URL using requests library
@@ -75,5 +76,8 @@ def get_similar_products_image(filename, num_results):
                 st.write("Product Title: ", row["title"])
                 st.write("Price: ", row["formatted_price"])
                 st.write("Color: ", row["color"])
+                
+                rating = random.randint(0, 4)
+                st.write(Star_List[rating])
             
-            st.divider()
+            # st.divider()

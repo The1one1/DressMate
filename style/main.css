@@ -11,6 +11,13 @@ div.block-container.css-12oz5g7.egzxvld2 {
   padding-top: 0px;
 }
 
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+div[data-testid="stHorizontalBlock"] > div:first-of-type {
+  background-color: #fffe001a;
+}
 
 #cloth-recommendation-system{
     font-family: "Source Sans Pro", sans-serif;
