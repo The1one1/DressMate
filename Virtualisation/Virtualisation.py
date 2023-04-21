@@ -1,5 +1,5 @@
 import streamlit as st 
-import ResNet50 as rn
+import recommendation.ResNet50 as rn
 import os
 import hydralit_components as hc
 from PIL import Image
