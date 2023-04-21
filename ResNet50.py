@@ -44,14 +44,14 @@ def extract_features(filename):
 
 Star_List = ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐', '⭐⭐⭐⭐⭐']
 # Define function to get similar products for a given image file
-def get_similar_products_image(filename, num_results):
+
+@st.cache_resource()
+def get_similar_products_image(filename, num_results, flag = False, human = ):
     # Extract features from input image
     input_features = extract_features(filename)
 
     # Compute pairwise distances between input image features and dataset features
-    pairwise_dist = pairwise_distances(
-        bottleneck_features_train, input_features.reshape(1, -1)
-    )
+    pairwise_dist = pairwise_distances(bottleneck_features_train, input_features.reshape(1, -1))
 
     # Get indices of most similar products
     indices = np.argsort(pairwise_dist.flatten())[0:num_results]
@@ -61,16 +61,26 @@ def get_similar_products_image(filename, num_results):
         rows = data[["medium_image_url", "title", "formatted_price", "color"]].loc[
             data["asin"] == asins[indices[i]]
         ]
+        
         for indx, row in rows.iterrows():
             left, right = st.columns([1, 2])
             with left:
                 image_url = row["medium_image_url"]
-                # Fetch image from URL using requests library
-                response = requests.get(image_url)
-                # Open the bytes data using the Image class from PIL
-                img = Image.open(BytesIO(response.content))
-                # Display the image using streamlit
-                st.image(img)
+                
+                if(not flag):
+                    # Fetch image from URL using requests library
+                    response = requests.get(image_url)
+                    # Open the bytes data using the Image class from PIL
+                    img = Image.open(BytesIO(response.content))
+                    # Display the image using streamlit
+                    st.image(img)
+                else:
+                    response = requests.get(image_url)
+                    # Open the bytes data using the Image class from PIL
+                    img = Image.open(BytesIO(response.content))
+                    # Display the image using streamlit
+                    st.image(img)
+                    
 
             with right:
                 st.write("Product Title: ", row["title"])

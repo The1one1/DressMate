@@ -3,5 +3,6 @@ env
 *.npy
 *.pkl
 *.ipynb
+practice.py
 pickels
 numpy_file
