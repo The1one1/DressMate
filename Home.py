@@ -13,8 +13,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-import recommendation.ResNet50 as rn
-import recommendation.searching as sr
+import ResNet50 as rn
+import searching as sr
 from PIL import Image
 from streamlit_option_menu import option_menu
 

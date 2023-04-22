@@ -46,7 +46,7 @@ Star_List = ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐', '⭐⭐⭐⭐⭐']
 # Define function to get similar products for a given image file
 
 @st.cache_resource()
-def get_similar_products_image(filename, num_results, flag = False, human = ):
+def get_similar_products_image(filename, num_results, flag = False):
     # Extract features from input image
     input_features = extract_features(filename)
 
