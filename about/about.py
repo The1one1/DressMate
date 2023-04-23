@@ -4,6 +4,7 @@ from streamlit_extras.mention import mention
 
 # Dataset used
 DATASET_URL = "https://www.kaggle.com/subahsiniarajan/amazon-womens-top-fashion"
+CSV_FILE_PATH = 'filtered_apparel_data.csv'
 
 # Model results on the image dataset (example only)
 MODEL_ACCURACY = 0.85
@@ -18,39 +19,42 @@ Team Members:
 - Shreya Patike
 - Vatsal Savaliya
 """
+
+# About section
 st.markdown("# About")
 st.write("""
         Our project aims to provide personalized recommendations for women's top fashion 
-        based on their needs and preferences. We utilized the :red[ResNet50 model] for feature 
+        based on their needs and preferences. We utilized the **ResNet50 model** for feature 
         extraction and analyzed product titles and descriptions for matching patterns. 
-        We used the Amazon Women Top Fashion dataset for training our model, resulting in 
+        We used the [Amazon Women Top Fashion dataset]({}) for training our model, resulting in 
         a highly accurate recommendation system.
-        """)
+        """.format(DATASET_URL))
   
 st.divider()
 
-# About the dataset
+# Dataset section
 st.header("Dataset")
 st.markdown(f"The model was trained on the [Amazon Women Top Fashion dataset]({DATASET_URL}) with over 16k clothing items.")
-data = pd.read_csv('filtered_apparel_data.csv')
+data = pd.read_csv(CSV_FILE_PATH)
 
 # Create a container to hold the table
 with st.container():
     # Display the data as a table
     st.dataframe(data)
+    
 st.divider()
 
-
-# About the model
+# Model section
 st.header("Model Results")
 st.write("The model achieved an accuracy of {:.2f}% and a loss of {:.2f} on the validation set.".format(MODEL_ACCURACY*100, MODEL_LOSS))
 
 st.divider()
 
-
-# ! ---- Team Members ---- !
+# Team Members section
 st.markdown("# Team Members")
 col1, col2, col3 = st.columns(3)
+
+GITHUB_LINK = "https://github.com/"
 
 with col1:
     st.image("upload/1561.jpg", use_column_width=False)
@@ -63,7 +67,7 @@ with col1:
     mention(
         label="github",
         icon="github",
-        url="https://github.com/The1one1",
+        url=GITHUB_LINK + "The1one1",
     )
     
 
@@ -72,13 +76,13 @@ with col2:
     mention(
         label=":blue[Shreya Patike]",
         icon="",
-        url="https://github.com/The1one1",
+        url=GITHUB_LINK + "The1one1",
     )
     
     mention(
         label="github",
         icon="github",
-        url="https://github.com/The1one1",
+        url=GITHUB_LINK + "The1one1",
     )
     
     
@@ -87,12 +91,11 @@ with col3:
     mention(
         label=":blue[Vatsal Savaliya]",
         icon="",
-        url="https://github.com/The1one1",
+        url=GITHUB_LINK + "vatsal2473",
     )
     
     mention(
         label="github",
         icon="github",
-        url="https://github.com/The1one1",
+        url=GITHUB_LINK + "vatsal2473",
     )
-    
