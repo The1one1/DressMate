@@ -1,11 +1,10 @@
-import requests
+from streamlit_option_menu import option_menu
+from pathlib import Path
+import streamlit as st
 from io import BytesIO
 from PIL import Image
-from pathlib import Path
+import requests
 import random
-import hydralit_components as hc
-import streamlit as st
-from streamlit_option_menu import option_menu
 
 # set up page config
 st.set_page_config(
@@ -17,6 +16,7 @@ st.set_page_config(
 
 # title
 st.title("Cloth Recommendation System")
+
 import ResNet50 as rn
 import searching as sr
 
