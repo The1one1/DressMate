@@ -1,33 +1,48 @@
 import streamlit as st 
-st.write('Hellow')
-# import ResNet50 as rn
-# import os
-# import hydralit_components as hc
-# from PIL import Image
+import requests
+import io
 
+url = "https://de89-104-197-163-57.ngrok-free.app/upload"
 
-# left, right = st.columns([1, 1])
+left, right = st.columns(2)
+human_image = cloth_image = st.empty()
+with left:
+    cloth_image = st.file_uploader('Upload Cloth Image', type=['jpg', 'png', 'jpeg'])
 
-# with left:
-#     cloth = st.file_uploader("Cloth Image", key="cloth")
+with right:
+    human_image = st.file_uploader('Upload Human Image', type=['jpg', 'png', 'jpeg'])
+
+# @st.cache(ttl=3600, show_spinner=False) # set a cache for 1 hour with no spinner
+# @st.experimental_time_it() # report time taken to execute function
+@st.cache_resource()
+def mask_image(cloth_image, human_image):
+    payload={}
+    files=[
+        ('original',('00008_00.jpg',io.BytesIO(human_image.read()) ,'image/jpeg')),
+        ('cloth',('00013_00.jpg',io.BytesIO(cloth_image.read()),'image/jpeg'))
+    ]
+    headers = {}
+    response = requests.request("POST", url, headers=headers, data=payload, files=files)
+    return response.json()['result']
+
+# if cloth_image and human_image:
+  
+if st.button('Search', type='primary'):
+  with st.spinner('Searching...'):
+          
+    image_result = mask_image(cloth_image, human_image)
     
-# with right:
-#     human = st.file_uploader("Human Image", key="human")
-   
-    
-# def recommend_Uploded_Image(cloth, human):
-#     folder = "Cloth"
-#     # save the uploaded file to the "uploads" folder with the same filename
-#     filepath = os.path.join(folder, cloth.name)
-#     with open(filepath, "wb") as f:
-#         f.write(cloth.getbuffer())
-
-#     image = Image.open(cloth)
-#     cloth = st.sidebar.image(image, caption="Uploaded Image", width=200)
-#     with hc.HyLoader('',hc.Loaders.pulse_bars,):
-#         rn.get_similar_products_image(f"upload\{cloth.name}", 100)
-
-# recommend_Uploded_Image(cloth, human)
-
-# with hc.HyLoader('',hc.Loaders.pulse_bars,):
-#         rn.get_similar_products_image("input_images/1561.jpg", 100)    
+    left, middle, right = st.columns(3)
+    with left:
+      st.write("Cloth Image")
+      st.image(cloth_image)  
+      
+    with middle:
+      st.write("Human Image")
+      st.image(human_image)
+      
+    with right:
+      st.warning("Result")
+      st.image(image_result)
+      
+    cloth_image = human_image = None
