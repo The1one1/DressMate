@@ -12,8 +12,6 @@ with left:
 with right:
     human_image = st.file_uploader('Upload Human Image', type=['jpg', 'png', 'jpeg'])
 
-# @st.cache(ttl=3600, show_spinner=False) # set a cache for 1 hour with no spinner
-# @st.experimental_time_it() # report time taken to execute function
 @st.cache_resource()
 def mask_image(cloth_image, human_image):
     payload={}

@@ -1,4 +1,5 @@
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
+from streamlit_extras.switch_page_button import switch_page
 from sklearn.metrics import pairwise_distances
 import streamlit as st
 from io import BytesIO
@@ -35,9 +36,8 @@ def extract_features(filename, _model):
     return features.flatten()
 
 
-
 # Define function to get similar products for a given image file
-@st.cache_resource()
+@st.cache_resource(experimental_allow_widgets=True)
 def get_similar_products_image(filename, num_results):
     # Load dataset features and asins
     bottleneck_features_train, asins, data, df_asins = load_data()
@@ -74,3 +74,6 @@ def get_similar_products_image(filename, num_results):
                 st.write("Price: ", row["formatted_price"])
                 st.write("Color: ", row["color"])
                 st.write('Rating:', ('⭐'*random.randint(1,5)))
+                
+                st.button('virtual try-on', key=f"try-on-{i}", type='primary')
+                # st.expander('Description', expanded=True)
