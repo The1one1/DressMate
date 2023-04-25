@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import io
 
-url = "https://de89-104-197-163-57.ngrok-free.app/upload"
+url = "https://7b0a-34-83-101-144.ngrok-free.app/upload"
 
 left, right = st.columns(2)
 human_image = cloth_image = st.empty()
