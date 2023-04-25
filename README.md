@@ -101,7 +101,7 @@ pip install -r requirements.txt
 To run the web server, simply execute streamlit with the main recommender app:
 
 ```bash
-streamlit run main.py
+streamlit run Home.py
 ```
 
 ## Built With
