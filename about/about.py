@@ -4,7 +4,7 @@ from streamlit_extras.mention import mention
 
 # Dataset used
 DATASET_URL = "https://www.kaggle.com/subahsiniarajan/amazon-womens-top-fashion"
-CSV_FILE_PATH = 'data/filtered_apparel_data.csv'
+CSV_FILE_PATH = 'filtered_apparel_data.csv'
 
 # Model results on the image dataset (example only)
 MODEL_ACCURACY = 0.85
@@ -116,7 +116,7 @@ with col1:
     
 
 with col2:
-    st.image("upload/1561.jpg", use_column_width= False)
+    st.image("https://media.licdn.com/dms/image/D4D03AQGkxV0CoHiMdg/profile-displayphoto-shrink_400_400/0/1679544759666?e=1687996800&v=beta&t=A0Q6p75DeRPN8MZl_Uiii6lSGj6WBiHxVSWwnxdxiRE", use_column_width= False)
     mention(
         label=":blue[Shreya Patike]",
         icon="",

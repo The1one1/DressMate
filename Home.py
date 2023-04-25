@@ -65,10 +65,6 @@ def recommend_query_image(query):
             st.write(f"Brand: {row['brand']}")
             st.write(f"Price: {row['formatted_price']}")
             st.write('Rating:', ('⭐'*random.randint(1,5)))
-            
-            st.button('virtual try-on', key=f"try-on-{i}", type='primary')
-            
-
 
 # navigation bar
 select_menu = option_menu(
