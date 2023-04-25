@@ -5,6 +5,7 @@ from io import BytesIO
 from PIL import Image
 import requests
 import random
+from streamlit_extras.mention import mention
 
 # set up page config
 st.set_page_config(
@@ -64,6 +65,10 @@ def recommend_query_image(query):
             st.write(f"Brand: {row['brand']}")
             st.write(f"Price: {row['formatted_price']}")
             st.write('Rating:', ('⭐'*random.randint(1,5)))
+            
+            st.button('virtual try-on', key=f"try-on-{i}", type='primary')
+            
+
 
 # navigation bar
 select_menu = option_menu(
