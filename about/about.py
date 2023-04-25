@@ -14,66 +14,41 @@ import streamlit as st
 
 DATASET_URL = "https://example.com/dataset"
 
+# Define function to show About section
 def show_about():
-    st.markdown("<h1 style='color:#6a0dad;'>About</h1>", unsafe_allow_html=True)
-    st.write("""
-        <div style='background-color:#f1f1f1; padding:10px;'>
-            <p style='color:#555555;'>This is a clothing recommendation system built with ResNet50 model for feature extraction and recommendation based 
-            on product title and description. The Amazon Women Top Fashion dataset was used for training the model.</p>
-            
-            <p style='color:#555555;'>Team Members:</p>
-            <ul>
-                <li style='color:#555555;'>Rahul Sharma</li>
-                <li style='color:#555555;'>Shreya Patike</li>
-                <li style='color:#555555;'>Vatsal Savaliya</li>
-            </ul>
-            
-            <p style='color:#555555;'>Our project aims to provide personalized recommendations for women's top fashion based on their needs and preferences. 
-            We utilized the <b>ResNet50 model</b> for feature extraction and analyzed product titles and descriptions for matching 
-            patterns. We used the <a href="{}" style='color:#6a0dad;'>Amazon Women Top Fashion dataset</a> for training our model, resulting in a highly accurate 
-            recommendation system.</p>
-        </div>
-    """.format(DATASET_URL), unsafe_allow_html=True)  
-    
-    st.subheader("Cloth Recommendation System")
-
-
-
-# About section
-def show_about():
-    st.markdown("# About")
-    st.write("""
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>About</h1>", unsafe_allow_html=True)
+   
+    st.markdown("""
         This is a clothing recommendation system built with ResNet50 model for feature extraction and recommendation based 
-        on product title and description. The Amazon Women Top Fashion dataset was used for training the model.
-        
-        Team Members:
+        on description. We used the **Amazon Women Top Fashion dataset** [here]('https://example.com/dataset') for training our model, resulting in a highly accurate recommendation system.
+    """)
+
+    st.subheader("Team Members")
+    st.markdown("""
+        - Vatsal Savaliya
         - Rahul Sharma
         - Shreya Patike
-        - Vatsal Savaliya
-        
-        Our project aims to provide personalized recommendations for women's top fashion based on their needs and preferences. 
-        We utilized the **ResNet50 model** for feature extraction and analyzed product titles and descriptions for matching 
-        patterns. We used the [Amazon Women Top Fashion dataset]({}) for training our model, resulting in a highly accurate 
-        recommendation system.
-    """.format(DATASET_URL))  
+    """)  
     
-    st.subheader("Cloth Recommendation System")
-    st.write("Our cloth recommendation system uses ResNet50 for feature extraction and Pinecone for vector searches. This allows us to quickly and accurately recommend similar clothing items based on their visual features.")
+    st.markdown("<h2 style='text-align: center; color: #DB7093;'>Cloth Recommendation System</h2>", unsafe_allow_html=True)
+    st.write("<div style='text-align: justify; color: #696969;'>Our cloth recommendation system uses ResNet50 for feature extraction and Pinecone for vector searches. This allows us to quickly and accurately recommend similar clothing items based on their visual features.</div>", unsafe_allow_html=True)
 
-    st.subheader("Virtual Try-On")
-    st.write("We have integrated the HrViton model with our Flask API to provide users with a virtual try-on experience. Users can upload an image of themselves and see how they would look in various clothing items.")
+    st.markdown("<h2 style='text-align: center; color: #DB7093;'>Virtual Try-On</h2>", unsafe_allow_html=True)
+    st.write("<div style='text-align: justify; color: #696969;'>We have integrated the HrViton model with our Flask API to provide users with a virtual try-on experience. Users can upload an image of themselves and see how they would look in various clothing items.</div>", unsafe_allow_html=True)
 
-    st.subheader("Amazon Womens Fashion Data")
-    st.write("We have used the Amazon Womens Fashion data in our recommendation system. This dataset contains a wide variety of women's clothing items, allowing us to provide diverse and comprehensive recommendations to our users.")
+    st.markdown("<h2 style='text-align: center; color: #DB7093;'>Amazon Womens Fashion Data</h2>", unsafe_allow_html=True)
+    st.write("<div style='text-align: justify; color: #696969;'>We have used the Amazon Womens Fashion data in our recommendation system. This dataset contains a wide variety of women's clothing items, allowing us to provide diverse and comprehensive recommendations to our users.</div>", unsafe_allow_html=True)
 
-    st.subheader('Pinecone model')
-    st.write('Pinecone is a vector search engine that we have integrated with our ResNet50 model for cosine similarity searches. It allows us to store and retrieve image feature vectors quickly and efficiently, enabling fast and accurate cloth recommendations.')
+    st.markdown("<h2 style='text-align: center; color: #DB7093;'>Pinecone model</h2>", unsafe_allow_html=True)
+    st.write("<div style='text-align: justify; color: #696969;'>Pinecone is a vector search engine that we have integrated with our ResNet50 model for cosine similarity searches. It allows us to store and retrieve image feature vectors quickly and efficiently, enabling fast and accurate cloth recommendations.</div>", unsafe_allow_html=True)
     
-    st.subheader('Flask API')
-    st.write('We have used the Flask API to connect our virtual try-on models with the Streamlit frontend. This API allows us to perform image processing on the backend while communicating with the frontend to provide a seamless experience to the user.')
+    st.markdown("<h2 style='text-align: center; color: #DB7093;'>Flask API</h2>", unsafe_allow_html=True)
+    st.write("<div style='text-align: justify; color: #696969;'>We have used the Flask API to connect our virtual try-on models with the Streamlit frontend. This API allows us to perform image processing on the backend while communicating with the frontend to provide a seamless experience to the user..</div>", unsafe_allow_html=True)
+
+    st.markdown("<h2 style='text-align: center; color: #DB7093;'>Streamlit</h2>", unsafe_allow_html=True)
+    st.write("<div style='text-align: justify; color: #696969;'>Python framework used for frontend Development..</div>", unsafe_allow_html=True)
 
 show_about()
-
 st.divider()
 
 # Dataset section
