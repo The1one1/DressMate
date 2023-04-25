@@ -3,7 +3,7 @@ import pandas as pd
 from streamlit_extras.mention import mention
 
 # Dataset used
-DATASET_URL = "https://www.kaggle.com/subahsiniarajan/amazon-womens-top-fashion"
+DATASET_URL = "https://drive.google.com/file/d/1sPUUZBQ20MsI-V4NlEUc_y5RAfbPUfzv/view?usp=share_link"
 CSV_FILE_PATH = 'filtered_apparel_data.csv'
 
 # Model results on the image dataset (example only)
@@ -72,7 +72,7 @@ with col1:
     
 
 with col2:
-    st.image("upload/1561.jpg", use_column_width= False)
+    st.image("https://media.licdn.com/dms/image/D4D03AQGkxV0CoHiMdg/profile-displayphoto-shrink_400_400/0/1679544759666?e=1687996800&v=beta&t=A0Q6p75DeRPN8MZl_Uiii6lSGj6WBiHxVSWwnxdxiRE", use_column_width= False)
     mention(
         label=":blue[Shreya Patike]",
         icon="",
