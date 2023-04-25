@@ -4,7 +4,7 @@ from streamlit_extras.mention import mention
 
 # Dataset used
 DATASET_URL = "https://www.kaggle.com/subahsiniarajan/amazon-womens-top-fashion"
-CSV_FILE_PATH = 'filtered_apparel_data.csv'
+CSV_FILE_PATH = 'data/filtered_apparel_data.csv'
 
 # Model results on the image dataset (example only)
 MODEL_ACCURACY = 0.85
