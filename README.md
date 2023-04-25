@@ -69,7 +69,7 @@ show a great accuracy of the model with low error, loss and good f-score.
 
 [Model Folder](https://drive.google.com/drive/folders/1bPBVRwUHTPhJlj7C2D_EtzAqJXnqM-Ci?usp=share_link)
 
-[DataSet](https://drive.google.com/drive/folders/1bPBVRwUHTPhJlj7C2D_EtzAqJXnqM-Ci?usp=share_link)
+[DataSet](https://drive.google.com/file/d/18_qpMawlFJNwwohS-X4wrgVBQWwYz1sU/view?usp=share_link)
 
 ## Screenshots
 
