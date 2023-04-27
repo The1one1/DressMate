@@ -69,23 +69,20 @@ streamlit run Home.py
 ```
 
 ## Built With
+For my virtual try-on project, I used a variety of powerful open-source libraries and tools to preprocess and analyze data, build and train neural networks, and create a user-friendly app interface. Some of the key technologies I used include:
 
-- [OpenCV]() - Open Source Computer Vision and Machine Learning software library
-- [Tensorflow]() - TensorFlow is an end-to-end open source platform for machine learning.
-- [Tqdm]() - tqdm is a Python library that allows you to output a smart progress bar by wrapping around any iterable.
-- [streamlit]() - Streamlit is an open-source app framework for Machine Learning and Data Science teams. Create beautiful data apps in hours, not weeks.
-- [pandas]() - pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
-- [Pillow]() - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
-- [scikit-learn]() - Scikit-learn is a free software machine learning library for the Python programming language.
-- [opencv-python]() - OpenCV is a huge open-source library for computer vision, machine learning, and image processing.
+- [OpenCV](https://opencv.org/) - OpenCV is a powerful computer vision and machine learning library that provides a wide range of image processing and analysis tools. I used it extensively in my project to preprocess and manipulate images, detect and extract features, and more.
 
-## Conclusion
+- [Tensorflow](https://www.tensorflow.org/) - TensorFlow is a popular machine learning platform that offers a wide range of tools and features for building and training neural networks. I used it in conjunction with transfer learning from the ResNet50 architecture to fine-tune the network model for virtual try-on.
 
-In this project, we have presented a novel framework for fashion recommendation that is driven by data, 
-visually related and simple effective recommendation systems for generating fashion product images. 
-The proposed approach uses a two-stage phase. Initially, our proposed approach extracts the features 
-of the image using CNN classifier ie., for instance allowing the customers to upload any random 
-fashion image from any E-commerce website and later generating similar images to the uploaded image 
-based on the features and texture of the input image. It is imperative that such research goes forward 
-to facilitate greater recommendation accuracy and improve the overall experience of fashion 
-exploration for direct and indirect consumers alike.
+- [Tqdm](https://tqdm.github.io/) - Tqdm is a simple yet powerful library for displaying progress bars in Python. I used it extensively in my data processing pipeline to monitor the progress of various operations.
+
+- [Streamlit](https://streamlit.io/) - Streamlit is a cutting-edge app framework for creating interactive data science and machine learning apps. I used it to create a user-friendly interface for my virtual try-on application, allowing users to easily upload images and view the results of the model.
+
+- [Pandas](https://pandas.pydata.org/) - Pandas is a popular data analysis and manipulation library for Python. I used it to load and manipulate various data sets used in my project, including the HR-VITON dataset.
+
+- [Pillow](https://pillow.readthedocs.io/en/stable/) - Pillow is a powerful image processing library for Python that provides a wide range of tools for image manipulation, filtering, and more. I used it in conjunction with OpenCV to preprocess and manipulate images throughout my project.
+
+- [scikit-learn](https://scikit-learn.org/stable/) - Scikit-learn is a popular machine learning library that provides a wide range of tools and algorithms for classification, regression, clustering, and more. While I didn't use it extensively in my virtual try-on project, it remains a powerful tool for many other machine learning applications.
+
+- [opencv-python](https://pypi.org/project/opencv-python/) - OpenCV-Python is a Python wrapper for the OpenCV library. I used it in conjunction with the main OpenCV library to build and train neural networks, preprocess and manipulate images, and more.
