@@ -46,24 +46,11 @@ weights from ResNet50 in order to fine-tune the network model to serve the curre
 
 ## Getting the inventory
 
-The images from Kaggle Fashion Product Images Dataset. The 
+The images from Amazon women fashion Dataset. The 
 inventory is then run through the neural networks to classify and generate embeddings and the output 
 is then used to generate recommendations. The Figure shows a sample set of inventory data
 
 ![Alt text](https://github.com/sonu275981/Clothing-recommender-system/blob/1e51a0d1db0e171e8d496524aa95a0098241fb1b/Demo/inventry.png?raw=true "Face-Recognition-Attendance-System")
-
-## Recommendation generation
-
-To generate recommendations, our proposed approach uses Sklearn Nearest neighbours Oh Yeah. This allows us to find the nearest neighbours for the 
-given input image. The similarity measure used in this Project is the Cosine Similarity measure. The top 5 
-recommendations are extracted from the database and their images are displayed.
-
-## Experiment and results
-
-The concept of Transfer learning is used to overcome the issues of the small size Fashion dataset. 
-Therefore we pre-train the classification models on the DeepFashion dataset that consists of 44,441
-garment images. The networks are trained and validated on the dataset taken. The training results 
-show a great accuracy of the model with low error, loss and good f-score.
 
 ### Dataset Link
 
